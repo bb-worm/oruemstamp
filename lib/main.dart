@@ -7,8 +7,11 @@ import 'package:oruemstamp/pages/login.dart';
 import 'package:oruemstamp/pages/home.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   await dotenv.load(fileName: 'assets/config/.env');
   KakaoSdk.init(nativeAppKey: dotenv.env['NATIVE_APP_KEY']);
+
   runApp(MyApp());
 }
 
