@@ -32,10 +32,11 @@ class _HomePageState extends State<HomePage> {
         body: SafeArea(child: _widgetOptions.elementAt(_selectedIndex)),
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: Icon(Icons.info), label: "오름정보"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.location_pin), label: "오름정보"),
             BottomNavigationBarItem(icon: Icon(Icons.sunny), label: "날씨정보"),
             BottomNavigationBarItem(
-                icon: Icon(FontAwesomeIcons.mapPin), label: "스탬프")
+                icon: Icon(FontAwesomeIcons.stamp), label: "스탬프")
           ],
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.green,

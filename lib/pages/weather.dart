@@ -11,8 +11,27 @@ class _WeatherPageState extends State<WeatherPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BaseAppBar(appBar: AppBar(), title: "오름스탬프"),
-      body: Center(child: Text("weather")),
+      appBar: BaseAppBar(
+          appBar: AppBar(),
+          title: const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "날씨",
+                style: TextStyle(
+                    color: Colors.green,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold),
+              ),
+              Icon(Icons.sunny, color: Colors.green, size: 40),
+              Text("정보",
+                  style: TextStyle(
+                      color: Colors.green,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold))
+            ],
+          )),
+      body: const Center(child: Text("weather")),
     );
   }
 }

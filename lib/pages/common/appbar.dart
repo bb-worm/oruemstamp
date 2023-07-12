@@ -4,19 +4,21 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   const BaseAppBar({super.key, required this.appBar, required this.title});
 
   final AppBar appBar;
-  final String title;
+  final Widget title;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: const Text(
-        "오름스탬프",
-        style: TextStyle(
-          color: Colors.green,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
+      title: title,
       backgroundColor: Colors.white,
+      centerTitle: true,
+      actions: [
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.settings),
+          color: Colors.green,
+        )
+      ],
     );
   }
 
