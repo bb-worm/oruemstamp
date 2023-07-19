@@ -12,25 +12,9 @@ class _WeatherPageState extends State<WeatherPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: BaseAppBar(
-          appBar: AppBar(),
-          title: const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "날씨",
-                style: TextStyle(
-                    color: Colors.green,
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold),
-              ),
-              Icon(Icons.sunny, color: Colors.green, size: 40),
-              Text("정보",
-                  style: TextStyle(
-                      color: Colors.green,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold))
-            ],
-          )),
+        appBar: AppBar(),
+        image: 'assets/appbar/weather.png',
+      ),
       body: const Center(child: Text("weather")),
     );
   }

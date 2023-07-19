@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 
 class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const BaseAppBar({super.key, required this.appBar, required this.title});
+  const BaseAppBar({super.key, required this.appBar, required this.image});
 
   final AppBar appBar;
-  final Widget title;
+
+  final String image;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: title,
+      elevation: 0.0,
+      title: Image.asset(
+        image,
+        width: 160,
+      ),
       backgroundColor: Colors.white,
-      centerTitle: true,
       actions: [
         IconButton(
           onPressed: () {},

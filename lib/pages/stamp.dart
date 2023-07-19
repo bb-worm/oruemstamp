@@ -12,25 +12,9 @@ class _StampPageState extends State<StampPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: BaseAppBar(
-          appBar: AppBar(),
-          title: const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "오름",
-                style: TextStyle(
-                    color: Colors.green,
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold),
-              ),
-              Icon(Icons.landscape, color: Colors.green, size: 40),
-              Text("탬프",
-                  style: TextStyle(
-                      color: Colors.green,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold))
-            ],
-          )),
+        appBar: AppBar(),
+        image: 'assets/appbar/stamp.png',
+      ),
       body: const Center(child: Text("stamp")),
     );
   }

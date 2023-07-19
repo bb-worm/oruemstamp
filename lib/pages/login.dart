@@ -20,21 +20,17 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ElevatedButton(
+              IconButton(
                   onPressed: () async {
                     if (await kakaoLogin.login()) {
                       Navigator.pushNamed(context, "/home");
                     }
                   },
-                  child: const Image(
+                  iconSize: 200,
+                  icon: const Image(
                     image: AssetImage("assets/kakao_login_medium_narrow.png"),
                     fit: BoxFit.contain,
                   )),
-              ElevatedButton(
-                  onPressed: () async {
-                    await kakaoLogin.logout();
-                  },
-                  child: const Text("Logout"))
             ],
           ),
         ));
