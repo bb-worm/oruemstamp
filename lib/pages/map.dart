@@ -17,7 +17,6 @@ class _OruemMapState extends State<OruemMap> {
   @override
   KakaoMap build(BuildContext context) {
     return KakaoMap(
-      center: LatLng(33.450701 - 0.45, 126.570667),
       currentLevel: 11,
       zoomControl: true,
       markers: markers.toList(),
@@ -25,19 +24,22 @@ class _OruemMapState extends State<OruemMap> {
         // set map controller
         context.read<MapModel>().setController(controller);
 
-        // set center
-        controller.setCenter(LatLng(33.450701 - 0.45, 126.570667));
-
-        // set markers
         final locations = await OruemApi().getAllLocations();
         for (var l in locations) {
           markers.add(Marker(
             markerId: markers.length.toString(),
             latLng: LatLng(l.latitude, l.longitude),
-            width: 24,
-            height: 35,
+            width: 7,
+            height: 10,
+            markerImageSrc:
+                'https://w7.pngwing.com/pngs/96/889/png-transparent-marker-map-interesting-places-the-location-on-the-map-the-location-of-the-thumbnail.png',
           ));
         }
+
+        // set center
+        controller.setCenter(LatLng(33.450701 - 0.45, 126.570667));
+
+        print(await controller.getCenter());
 
         setState(() {});
       }),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:oruemstamp/logics/login.dart';
+import '../logics/db.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -23,6 +24,9 @@ class _LoginPageState extends State<LoginPage> {
               IconButton(
                   onPressed: () async {
                     if (await kakaoLogin.login()) {
+                      await FireStoreDB().setUserDocument();
+
+                      // ignore: use_build_context_synchronously
                       Navigator.pushNamed(context, "/home");
                     }
                   },
@@ -31,6 +35,12 @@ class _LoginPageState extends State<LoginPage> {
                     image: AssetImage("assets/kakao_login_medium_narrow.png"),
                     fit: BoxFit.contain,
                   )),
+              ElevatedButton(
+                onPressed: () async {
+                  await kakaoLogin.logout();
+                },
+                child: const Text("logout"),
+              )
             ],
           ),
         ));

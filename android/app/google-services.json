@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "798670958966",
+    "project_id": "oruemstamp",
+    "storage_bucket": "oruemstamp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:798670958966:android:0148233ea3ac2fbc470a57",
+        "android_client_info": {
+          "package_name": "com.example.oruemstamp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "798670958966-vtf5qq0jp0mtpjth8k3k6vug3dnr47o1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFJQIEwTXGqB4X1AO16gWi1nPFPdIt44A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "798670958966-vtf5qq0jp0mtpjth8k3k6vug3dnr47o1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "798670958966-0f7gpvfovg5jar1qpvq3cu5nrgaal262.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.oruemDojang"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

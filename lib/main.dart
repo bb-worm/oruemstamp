@@ -1,13 +1,17 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'package:kakao_flutter_sdk_user/kakao_flutter_sdk_user.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:kakao_map_plugin/kakao_map_plugin.dart';
+import 'package:provider/provider.dart';
 
 import 'package:oruemstamp/pages/login.dart';
 import 'package:oruemstamp/pages/home.dart';
 import 'package:oruemstamp/providers/map.dart';
-import 'package:provider/provider.dart';
+import 'package:oruemstamp/providers/oruem_tile.dart';
+
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,14 +21,15 @@ void main() async {
   KakaoSdk.init(nativeAppKey: dotenv.env['NATIVE_APP_KEY']);
   AuthRepository.initialize(appKey: dotenv.env['JAVASCRIPT_KEY'] ?? "");
 
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   Future<bool> isLoggedIn() async {
-    // [TODO] delete
-    return true;
-
     if (!await AuthApi.instance.hasToken()) {
       return false;
     }
@@ -40,8 +45,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-        create: (_) => MapModel(),
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => MapModel()),
+          ChangeNotifierProvider(create: (_) => OruemTileModel())
+        ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           title: "Oruem Stamp",

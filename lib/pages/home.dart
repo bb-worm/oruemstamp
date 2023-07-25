@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:oruemstamp/pages/info.dart';
 import 'package:oruemstamp/pages/stamp.dart';
 import 'package:oruemstamp/pages/weather.dart';
-import 'package:oruemstamp/providers/map.dart';
-import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   @override
